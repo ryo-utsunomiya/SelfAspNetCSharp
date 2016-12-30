@@ -9,9 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-        好きな食べ物は？</div>
+        <p>好きな食べ物は？</p>
         <asp:RadioButtonList ID="list" runat="server" AutoPostBack="True" OnSelectedIndexChanged="list_SelectedIndexChanged" RepeatDirection="Horizontal">
             <asp:ListItem Selected="True">お寿司</asp:ListItem>
             <asp:ListItem>焼肉</asp:ListItem>
