@@ -9,19 +9,23 @@ namespace SelfAspNetCSharp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (list.Items.Count > 0)
+            {
+                lblResult.Text = string.Join(" ", GetSelectedValues(list.Items.Cast<ListItem>()));
+            }
         }
 
         protected void list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblResult.Text = String.Join(" ", GetSelectedValues(list.Items));
+            // Nothing to do
         }
 
-        private IEnumerable<string> GetSelectedValues(ListItemCollection items)
+        private string[] GetSelectedValues(IEnumerable<ListItem> items)
         {
-            return items.Cast<ListItem>()
-                .Where(i => i.Selected)
-                .Select(i => i.Value);
+            return (from i in items
+                    where i.Selected
+                    select i.Value)
+                    .ToArray<string>();
         }
     }
 }
