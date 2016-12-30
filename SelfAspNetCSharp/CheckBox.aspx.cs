@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace SelfAspNetCSharp
@@ -16,17 +13,11 @@ namespace SelfAspNetCSharp
 
         protected void list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var values = new List<string>();
+            var selectedValues = list.Items.Cast<ListItem>()
+                .Where(i => i.Selected)
+                .Select(i => i.Value);
 
-            foreach(ListItem item in list.Items)
-            {
-                if (item.Selected)
-                {
-                    values.Add(item.Value);
-                }
-            }
-
-            lblResult.Text = String.Join(" ", values);
+            lblResult.Text = String.Join(" ", selectedValues);
         }
     }
 }
