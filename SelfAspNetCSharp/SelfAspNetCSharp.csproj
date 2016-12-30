@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CheckBox.aspx" />
+    <Content Include="FileUpload.aspx" />
     <Content Include="Hello.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="CheckBox.aspx.designer.cs">
       <DependentUpon>CheckBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpload.aspx.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileUpload.aspx.designer.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
