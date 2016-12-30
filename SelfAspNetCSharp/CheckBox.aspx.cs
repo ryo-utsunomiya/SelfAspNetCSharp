@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
 
@@ -13,11 +14,14 @@ namespace SelfAspNetCSharp
 
         protected void list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedValues = list.Items.Cast<ListItem>()
+            lblResult.Text = String.Join(" ", GetSelectedValues(list.Items));
+        }
+
+        private IEnumerable<string> GetSelectedValues(ListItemCollection items)
+        {
+            return items.Cast<ListItem>()
                 .Where(i => i.Selected)
                 .Select(i => i.Value);
-
-            lblResult.Text = String.Join(" ", selectedValues);
         }
     }
 }
