@@ -11,7 +11,10 @@ namespace SelfAspNetCSharp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                txtName.Text = "権兵衛";
+            }
         }
 
         protected void btnSend_Click(object sender, EventArgs e)
