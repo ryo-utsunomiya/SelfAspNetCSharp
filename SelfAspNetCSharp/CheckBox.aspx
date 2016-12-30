@@ -10,8 +10,14 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <p>好きな食べ物は？</p>
     </div>
+        <asp:CheckBoxList ID="list" runat="server" AutoPostBack="True" OnSelectedIndexChanged="list_SelectedIndexChanged" RepeatDirection="Horizontal">
+            <asp:ListItem Selected="True">sushi</asp:ListItem>
+            <asp:ListItem>yakiniku</asp:ListItem>
+            <asp:ListItem>unagi</asp:ListItem>
+        </asp:CheckBoxList>
+        <asp:Label ID="lblResult" runat="server"></asp:Label>
     </form>
 </body>
 </html>

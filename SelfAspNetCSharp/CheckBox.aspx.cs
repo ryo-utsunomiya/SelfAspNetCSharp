@@ -13,5 +13,20 @@ namespace SelfAspNetCSharp
         {
 
         }
+
+        protected void list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var values = new List<string>();
+
+            foreach(ListItem item in list.Items)
+            {
+                if (item.Selected)
+                {
+                    values.Add(item.Value);
+                }
+            }
+
+            lblResult.Text = String.Join(" ", values);
+        }
     }
 }
