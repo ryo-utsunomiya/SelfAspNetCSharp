@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link href="Styles/Site.css" rel="stylesheet" />
-</head>Z
+</head>
 <body>
     <form id="form1" runat="server">
     <div>
