@@ -94,6 +94,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SelfAsp.mdf" />
+    <Content Include="App_Data\SelfAsp_log.ldf">
+      <DependentUpon>SelfAsp.mdf</DependentUpon>
+    </Content>
     <Content Include="CheckBox.aspx" />
     <Content Include="FileUpload.aspx" />
     <Content Include="Hello.aspx" />
@@ -180,7 +184,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
