@@ -119,7 +119,9 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="RadioButton.aspx" />
+    <Content Include="Styles\Site.css" />
     <Content Include="Text.aspx" />
+    <Content Include="Validation.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +170,13 @@
     </Compile>
     <Compile Include="Text.aspx.designer.cs">
       <DependentUpon>Text.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validation.aspx.cs">
+      <DependentUpon>Validation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validation.aspx.designer.cs">
+      <DependentUpon>Validation.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
