@@ -11,7 +11,9 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:RadioButtonList ID="list" runat="server" AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="sds_list" DataTextField="category" DataValueField="category" RepeatDirection="Horizontal">
+        <asp:Label ID="lblNum" runat="server"></asp:Label>
+    
+        <asp:RadioButtonList ID="list" runat="server" AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="sds_list" DataTextField="category" DataValueField="category" RepeatDirection="Horizontal" OnSelectedIndexChanged="list_SelectedIndexChanged">
         </asp:RadioButtonList>
         <asp:SqlDataSource ID="sds_list" runat="server" ConnectionString="<%$ ConnectionStrings:SelfAsp %>" SelectCommand="SELECT DISTINCT [category] FROM [Album] ORDER BY [category]"></asp:SqlDataSource>
     
@@ -35,9 +37,10 @@
             <SortedDescendingCellStyle BackColor="#EAEAD3" />
             <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
-        <asp:SqlDataSource ID="sds" runat="server" ConnectionString="<%$ ConnectionStrings:SelfAsp %>" SelectCommand="SELECT [aid], [category], [comment], [updated], [favorite] FROM [Album] WHERE ([category] = @category)">
+        <asp:SqlDataSource ID="sds" runat="server" ConnectionString="<%$ ConnectionStrings:SelfAsp %>" SelectCommand="AlbumFilter" OnSelecting="sds_Selecting" OnSelected="sds_Selected" SelectCommandType="StoredProcedure">
             <SelectParameters>
                 <asp:ControlParameter ControlID="list" Name="category" PropertyName="SelectedValue" Type="String" />
+                <asp:Parameter Direction="Output" Name="recnum" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
     </form>

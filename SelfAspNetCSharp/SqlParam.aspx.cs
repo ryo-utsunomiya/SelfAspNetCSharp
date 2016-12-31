@@ -13,5 +13,20 @@ namespace SelfAspNetCSharp
         {
 
         }
+
+        protected void sds_Selected(object sender, SqlDataSourceStatusEventArgs e)
+        {
+            lblNum.Text = e.Command.Parameters["@recnum"].Value.ToString();
+        }
+
+        protected void list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void sds_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }
