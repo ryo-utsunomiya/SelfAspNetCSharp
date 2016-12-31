@@ -100,6 +100,7 @@
     </Content>
     <Content Include="CheckBox.aspx" />
     <Content Include="FileUpload.aspx" />
+    <Content Include="GridView.aspx" />
     <Content Include="Hello.aspx" />
     <Content Include="HyperLink.aspx" />
     <Content Include="packages.config" />
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GridView.aspx.cs">
+      <DependentUpon>GridView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridView.aspx.designer.cs">
+      <DependentUpon>GridView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Hello.aspx.cs">
       <DependentUpon>Hello.aspx</DependentUpon>
