@@ -97,6 +97,7 @@
     <Content Include="CheckBox.aspx" />
     <Content Include="FileUpload.aspx" />
     <Content Include="Hello.aspx" />
+    <Content Include="HyperLink.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -138,6 +139,13 @@
     </Compile>
     <Compile Include="Hello.aspx.designer.cs">
       <DependentUpon>Hello.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HyperLink.aspx.cs">
+      <DependentUpon>HyperLink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HyperLink.aspx.designer.cs">
+      <DependentUpon>HyperLink.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RadioButton.aspx.cs">
