@@ -13,11 +13,12 @@ namespace SelfAspNetCSharp
             var adapter = new SqlDataAdapter("SELECT * FROM Book WHERE publish = @publish", setting.ConnectionString);
             adapter.SelectCommand.Parameters.AddWithValue("@publish", "翔泳社");
             var ds = new DataSet();
-            adapter.Fill(ds, "Book");
+            const string tableName = "Book";
+            adapter.Fill(ds, tableName);
 
-            for (int i = 0; i < ds.Tables["Book"].Rows.Count; i++)
+            for (int i = 0; i < ds.Tables[tableName].Rows.Count; i++)
             {
-                Response.Write(ds.Tables["Book"].Rows[i]["title"] + "<br />");
+                Response.Write(ds.Tables[tableName].Rows[i]["title"] + "<br />");
             }
         }
     }
