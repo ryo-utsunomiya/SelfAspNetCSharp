@@ -106,6 +106,7 @@
     <Content Include="Hello.aspx" />
     <Content Include="HyperLink.aspx" />
     <Content Include="NonAccess.aspx" />
+    <Content Include="ObjectParam.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -135,6 +136,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Album.cs" />
     <Compile Include="CheckBox.aspx.cs">
       <DependentUpon>CheckBox.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,6 +195,13 @@
     </Compile>
     <Compile Include="NonAccess.aspx.designer.cs">
       <DependentUpon>NonAccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectParam.aspx.cs">
+      <DependentUpon>ObjectParam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ObjectParam.aspx.designer.cs">
+      <DependentUpon>ObjectParam.aspx</DependentUpon>
     </Compile>
     <Compile Include="PhotoUpload.aspx.cs">
       <DependentUpon>PhotoUpload.aspx</DependentUpon>
