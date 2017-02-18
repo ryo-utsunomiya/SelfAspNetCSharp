@@ -99,6 +99,7 @@
       <DependentUpon>SelfAsp.mdf</DependentUpon>
     </Content>
     <Content Include="CheckBox.aspx" />
+    <Content Include="ExecuteReader.aspx" />
     <Content Include="FileUpload.aspx" />
     <Content Include="FormView.aspx" />
     <Content Include="GridView.aspx" />
@@ -139,6 +140,13 @@
     </Compile>
     <Compile Include="CheckBox.aspx.designer.cs">
       <DependentUpon>CheckBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteReader.aspx.cs">
+      <DependentUpon>ExecuteReader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExecuteReader.aspx.designer.cs">
+      <DependentUpon>ExecuteReader.aspx</DependentUpon>
     </Compile>
     <Compile Include="FileUpload.aspx.cs">
       <DependentUpon>FileUpload.aspx</DependentUpon>
