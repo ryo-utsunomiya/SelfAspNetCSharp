@@ -105,6 +105,7 @@
     <Content Include="GridView.aspx" />
     <Content Include="Hello.aspx" />
     <Content Include="HyperLink.aspx" />
+    <Content Include="NonAccess.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="HyperLink.aspx.designer.cs">
       <DependentUpon>HyperLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NonAccess.aspx.cs">
+      <DependentUpon>NonAccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NonAccess.aspx.designer.cs">
+      <DependentUpon>NonAccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="PhotoUpload.aspx.cs">
       <DependentUpon>PhotoUpload.aspx</DependentUpon>
