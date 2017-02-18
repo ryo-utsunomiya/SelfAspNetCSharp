@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace SelfAspNetCSharp
 {
@@ -15,20 +11,20 @@ namespace SelfAspNetCSharp
         {
             var setting = ConfigurationManager.ConnectionStrings["SelfAsp"];
 
-            using (var db = new SqlConnection(setting.ConnectionString))
+            using (var connection = new SqlConnection(setting.ConnectionString))
             {
-                var comm = new SqlCommand("SELECT title FROM Book WHERE publish = @publish", db);
-                comm.Parameters.AddWithValue("@publish", "shoeishya");
+                var command = new SqlCommand("SELECT title FROM Book WHERE publish = @publish", connection);
+                command.Parameters.AddWithValue("@publish", "翔泳社");
 
-                db.Open();
-                var reader = comm.ExecuteReader();
+                connection.Open();
+                var reader = command.ExecuteReader();
 
-                do
+                while (reader.Read())
                 {
                     Response.Write(reader["title"] + "<br />");
-                } while (reader.Read());
+                }
 
-                db.Close();
+                connection.Close();
             }
         }
     }
