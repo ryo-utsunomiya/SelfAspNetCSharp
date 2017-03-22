@@ -156,6 +156,7 @@
     <Content Include="Styles\Site.css" />
     <Content Include="Text.aspx" />
     <Content Include="Validation.aspx" />
+    <Content Include="ViewStateGame.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +280,13 @@
     </Compile>
     <Compile Include="Validation.aspx.designer.cs">
       <DependentUpon>Validation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewStateGame.aspx.cs">
+      <DependentUpon>ViewStateGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewStateGame.aspx.designer.cs">
+      <DependentUpon>ViewStateGame.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
