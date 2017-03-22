@@ -4,30 +4,45 @@ namespace SelfAspNetCSharp
 {
     public partial class ViewStateGame : System.Web.UI.Page
     {
-        private readonly string count = "count";
-        private readonly string answer = "answer";
+        private int ViewStateCount
+        {
+            get { return (int)ViewState["count"]; }
+            set { ViewState["count"] = value; }
+        }
+
+        private int ViewStateAnswer
+        {
+            get { return (int) ViewState["answer"]; }
+            set { ViewState["answer"] = value; }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack) return;
 
-            ViewState[count] = 0;
-            ViewState[answer] = new Random().Next(100);
+            ViewStateCount = 0;
+            ViewStateAnswer = new Random().Next(100);
         }
 
         protected void btnSend_OnClick_Click(object sender, EventArgs e)
         {
-            ViewState[count] = (int)ViewState[count] + 1;
+            ViewStateCount++;
 
-            if (ViewState[answer].ToString().Equals(txtNum.Text))
+            int num;
+            if (!int.TryParse(txtNum.Text, out num))
             {
-                lblResult.Text = $"{ViewState[count]} times";
+                lblResult.Text = "Invalid input";
+                return;
+            }
+
+            if (ViewStateAnswer == num)
+            {
+                lblResult.Text = $"{ViewStateCount} times";
                 ViewState.Clear();
             }
             else
             {
-                lblResult.Text = (int)ViewState[answer] > int.Parse(txtNum.Text) ?
-                    "More larger" : "More smaller";
+                lblResult.Text = ViewStateAnswer > num ? "More larger" : "More smaller";
             }
         }
     }
