@@ -105,6 +105,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App1.aspx" />
+    <Content Include="App2.aspx" />
     <Content Include="App_Data\SelfAsp.mdf" />
     <Content Include="App_Data\SelfAsp_log.ldf">
       <DependentUpon>SelfAsp.mdf</DependentUpon>
@@ -170,6 +172,20 @@
       <DependentUpon>AlbumDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="AlbumTableAdapter.cs" />
+    <Compile Include="App1.aspx.cs">
+      <DependentUpon>App1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App1.aspx.designer.cs">
+      <DependentUpon>App1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App2.aspx.cs">
+      <DependentUpon>App2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App2.aspx.designer.cs">
+      <DependentUpon>App2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CheckBox.aspx.cs">
       <DependentUpon>CheckBox.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
